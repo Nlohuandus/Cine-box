@@ -1,7 +1,7 @@
 package com.company;
 
 public class Movie extends Media {
-    boolean wonOscar;
+    private boolean wonOscar;
 
     public Movie(String title, String genre, int duration) {
         super(title, genre, duration);
@@ -13,5 +13,9 @@ public class Movie extends Media {
 
     public void setWonOscar(boolean wonOscar) {
         this.wonOscar = wonOscar;
+    }
+    @Override
+    public int getDuration() {
+        return super.getDuration();
     }
 }
