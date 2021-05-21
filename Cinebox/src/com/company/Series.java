@@ -52,8 +52,9 @@ public class Series extends Media {
     public void setEpisodeDuration(int episodeDuration) {
         this.episodeDuration = episodeDuration;
     }
+
     @Override
     public int getDuration() {
-        return episodeDuration*totalEpisodes;
+        return episodeDuration * totalEpisodes;
     }
 }

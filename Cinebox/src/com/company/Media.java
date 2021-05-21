@@ -21,25 +21,12 @@ public class Media {
         this.synopsis = synopsis;
     }
 
-    public void download() {
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("Downloading " + title);
-                try {
-                    Thread.sleep(5000);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                System.out.println(title + " Downloaded!");
-                content = "A un tipo le matan su perrito y va y se desquita con todos";
-            }
-        });
-        thread.start();
-    }
-
     public String getTitle() {
         return title;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     private void printSomething(String something) {
