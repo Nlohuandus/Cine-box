@@ -57,4 +57,13 @@ public class Series extends Media {
     public int getDuration() {
         return episodeDuration * totalEpisodes;
     }
+
+    @Override
+    public void play() {
+        System.out.println("Playing " + super.getTitle());
+        // Scanner sc= new Scanner(System.in);
+        // int episodeIndex = sc.nextInt();
+        // printSomething("Playing "+ episodeIndex + " of "+ super.getTitle());
+        // sc.close();
+    }
 }

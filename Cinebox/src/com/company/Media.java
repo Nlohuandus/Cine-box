@@ -1,6 +1,6 @@
 package com.company;
 
-public class Media {
+abstract class Media implements Comparable<Media>{
     private String title;
     private String genre;
     private int duration;
@@ -11,6 +11,17 @@ public class Media {
         this.title = title;
         this.genre = genre;
         this.duration = duration;
+    }
+    @Override
+    public int compareTo(Media o) {
+        return this.getTitle().compareTo(o.getTitle());
+    }
+    public boolean equals(Object object){
+        if(object instanceof Media){
+            return this.title.equals(((Media) object).getTitle()) && this.genre.equals(((Media) object).getGenre());
+        }else{
+            return false;
+        }
     }
 
     public String getSynopsis() {
@@ -29,7 +40,7 @@ public class Media {
         this.content = content;
     }
 
-    private void printSomething(String something) {
+    public void printSomething(String something) {
         System.out.println(something);
 
     }
@@ -58,9 +69,7 @@ public class Media {
         this.duration = duration;
     }
 
-    public void play() {
-        printSomething("Playing " + title);
-    }
+    public abstract void play();
 
     public void pause() {
         printSomething(title + " paused");
