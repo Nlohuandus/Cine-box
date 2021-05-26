@@ -101,8 +101,12 @@ public class CineboxPlayer implements MediaDownloader.DownloadListener {
         int index = 1;
         System.out.println("selecciona una serie para ver su sinopsis");
         for (Media media : mediaList) {
-            System.out.println(index + ") " + media.getTitle());
-            index++;
+            try {
+                System.out.println(index + ") " + media.getTitle());
+                index++;
+            } catch (NullPointerException e) {
+                System.out.println("Hubo un roor para la pelicula con indice " + index);
+            }
         }
         System.out.println("0) Salir");
     }
