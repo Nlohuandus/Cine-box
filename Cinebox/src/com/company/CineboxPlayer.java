@@ -3,6 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
@@ -32,14 +33,26 @@ public class CineboxPlayer implements MediaDownloader.DownloadListener {
         howIMeetYourMother.setSynopsis("Lo mismo que friends pero con otras personas");
         caballerosDelZodiaco.setSynopsis("muchos luchadores que explican lo que haran antes de cada golpe");
 
-        PriorityQueue<Media> mediaQueue = new PriorityQueue<>();
-        mediaQueue.add(backToTheFuture);
-        mediaQueue.add(avengers);
-        mediaQueue.add(forrestGump);
-        mediaQueue.add(breakingBad);
-        mediaQueue.add(vikingos);
+        HashMap<Integer, Media> mediaHashMap = new HashMap();
+        mediaHashMap.put(1, backToTheFuture);
+        mediaHashMap.put(2, avengers);
+        mediaHashMap.put(1, forrestGump);
 
-        playQueue(mediaQueue);
+        Media media=mediaHashMap.get(2);
+        System.out.println(media);
+
+
+
+
+
+        // PriorityQueue<Media> mediaQueue = new PriorityQueue<>();
+        // mediaQueue.add(backToTheFuture);
+        // mediaQueue.add(avengers);
+        // mediaQueue.add(forrestGump);
+        // mediaQueue.add(breakingBad);
+        // mediaQueue.add(vikingos);
+
+        // playQueue(mediaQueue);
 
         // ArrayList<Media> mediaList = new ArrayList<>();
         // mediaList.add(backToTheFuture);
